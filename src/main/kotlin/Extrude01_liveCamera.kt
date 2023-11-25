@@ -14,6 +14,7 @@ import org.openrndr.extra.meshgenerators.boxMesh
 import org.openrndr.extra.minim.MinimObject
 import org.openrndr.ffmpeg.VideoPlayerFFMPEG
 import org.openrndr.ffmpeg.loadVideoDevice
+import org.openrndr.math.Vector3
 
 // enable   "orx-mesh-generators" in build.gradle.kts
 fun main() {
@@ -60,6 +61,9 @@ fun main() {
                 }
 
 
+                drawer.translate(0.0, 0.0, -120.0)
+                drawer.rotate(Vector3.UNIT_Z, 180.0, TransformTarget.MODEL)
+                drawer.rotate(Vector3.UNIT_X, 90.0, TransformTarget.MODEL)
                 camera.draw(drawer, blind = true)
                 drawer.isolatedWithTarget(rt) {
                     drawer.defaults()
